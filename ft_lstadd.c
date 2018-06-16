@@ -6,7 +6,7 @@
 /*   By: zack <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 20:50:11 by zack              #+#    #+#             */
-/*   Updated: 2018/06/16 15:19:35 by zbatik           ###   ########.fr       */
+/*   Updated: 2018/06/16 15:34:45 by zbatik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_lstadd(t_list **alst, t_list *new_node)
 {
-	new->next = *alst;
-	*alst = new;
+	new_node->next = *alst;
+	*alst = new_node;
 }

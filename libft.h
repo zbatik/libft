@@ -6,16 +6,16 @@
 /*   By: zbatik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 10:31:39 by zbatik            #+#    #+#             */
-/*   Updated: 2018/06/16 15:19:38 by zbatik           ###   ########.fr       */
+/*   Updated: 2018/06/16 15:34:16 by zbatik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-#define NULL (void *)0
+# include <stddef.h>
+
 typedef unsigned char byte;
-typedef unsigned long size_t
 
 void			*ft_memset(void *b, int c, size_t size);
 void			ft_bzero(void *s, size_t n);

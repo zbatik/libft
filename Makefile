@@ -6,7 +6,7 @@
 #    By: zbatik <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/24 11:33:49 by zbatik            #+#    #+#              #
-#    Updated: 2018/06/12 16:00:33 by zbatik           ###   ########.fr        #
+#    Updated: 2018/06/16 15:37:15 by zbatik           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,7 +79,9 @@ FILES		= 	ft_atoi \
 				ft_strsub \
 				ft_strtrim \
 				ft_tolower \
-				ft_toupper 
+				ft_toupper \
+				ft_strnjoin
+
 CFILES		= $(addsuffix .c, $(FILES))
 OFILES		= $(addsuffix .o, $(FILES))
 
