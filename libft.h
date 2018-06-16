@@ -6,14 +6,16 @@
 /*   By: zbatik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 10:31:39 by zbatik            #+#    #+#             */
-/*   Updated: 2018/06/12 14:36:29 by zbatik           ###   ########.fr       */
+/*   Updated: 2018/06/16 15:19:38 by zbatik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stddef.h>
+#define NULL (void *)0
+typedef unsigned char byte;
+typedef unsigned long size_t
 
 void			*ft_memset(void *b, int c, size_t size);
 void			ft_bzero(void *s, size_t n);
@@ -82,6 +84,7 @@ int				ft_countc(const char *s, char c);
 int				ft_sign(int n);
 void			ft_putstrarr(char **array);
 int				ft_indexcin(char const *s, int c);
+char			*ft_strnjoin(char const *s1, char const *s2, size_t n);
 
 typedef struct	s_list
 {
@@ -93,7 +96,7 @@ typedef struct	s_list
 t_list			*ft_lstnew(void const *content, size_t content_size);
 void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
-void			ft_lstadd(t_list **alst, t_list *new);
+void			ft_lstadd(t_list **alst, t_list *new_node);
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 #endif
