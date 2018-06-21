@@ -6,7 +6,7 @@
 /*   By: zbatik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 10:31:39 by zbatik            #+#    #+#             */
-/*   Updated: 2018/06/16 15:34:16 by zbatik           ###   ########.fr       */
+/*   Updated: 2018/06/21 17:25:06 by zbatik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 # define LIBFT_H
 
 # include <stddef.h>
-
-typedef unsigned char byte;
 
 void			*ft_memset(void *b, int c, size_t size);
 void			ft_bzero(void *s, size_t n);
@@ -85,6 +83,9 @@ int				ft_sign(int n);
 void			ft_putstrarr(char **array);
 int				ft_indexcin(char const *s, int c);
 char			*ft_strnjoin(char const *s1, char const *s2, size_t n);
+char			*ft_strtake(char const *str, size_t n);
+char			*ft_strdrop(char const *str, size_t n);
+char			*ft_strreplace(char **replace, char with);
 
 typedef struct	s_list
 {

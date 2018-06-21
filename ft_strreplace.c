@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strreplace.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zbatik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/28 13:54:11 by zbatik            #+#    #+#             */
-/*   Updated: 2018/06/21 16:47:56 by zbatik           ###   ########.fr       */
+/*   Created: 2018/06/21 17:14:16 by zbatik            #+#    #+#             */
+/*   Updated: 2018/06/21 17:21:54 by zbatik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strreplace(char **replace, char with)
 {
-	size_t len;
-	size_t i;
-
-	if (!s)
+	if (replace == NULL || with == NULL)
 		return (NULL);
-	i = 0;
-	len = ft_strlen(s) + 1;
-	while (i < len)
-	{
-		if (*(s + i) == (char)c)
-			return ((char*)s + i);
-		i++;
-	}
-	return (NULL);
+	if (*replace != NULL)
+		free(*replace);
+	*replace = with;
+	return (*replace);
 }
