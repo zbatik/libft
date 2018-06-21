@@ -6,7 +6,7 @@
 #    By: zbatik <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/24 11:33:49 by zbatik            #+#    #+#              #
-#    Updated: 2018/06/21 17:20:59 by zbatik           ###   ########.fr        #
+#    Updated: 2018/06/21 17:45:47 by zbatik           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,6 +83,8 @@ FILES		= 	ft_atoi \
 				ft_strnjoin \
 				ft_strtake \
 				ft_strdrop \
+				ft_strctake \
+				ft_strcdrop \
 				ft_strreplace 
 
 CFILES		= $(addsuffix .c, $(FILES))

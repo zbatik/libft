@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strreplace.c                                    :+:      :+:    :+:   */
+/*   ft_strcdrop.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zbatik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/21 17:14:16 by zbatik            #+#    #+#             */
-/*   Updated: 2018/06/21 17:40:01 by zbatik           ###   ########.fr       */
+/*   Created: 2018/06/21 17:46:23 by zbatik            #+#    #+#             */
+/*   Updated: 2018/06/21 17:51:15 by zbatik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strreplace(char **replace, char * with)
+char	*ft_strcdrop(char const *str, char c)
 {
-	if (replace == NULL || with == NULL)
-		return (NULL);
-	if (*replace != NULL)
-		free(*replace);
-	*replace = with;
-	return (*replace);
+	char	*drop;
+	int		ind;
+
+	ind = ft_indexcin(str, c);
+	if (ind < -1)
+		drop = ft_strdup(str);
+	else
+		drop = ft_strdrop(str, ind);
+	return (drop);
 }

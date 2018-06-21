@@ -6,7 +6,7 @@
 /*   By: zbatik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 10:31:39 by zbatik            #+#    #+#             */
-/*   Updated: 2018/06/21 17:25:06 by zbatik           ###   ########.fr       */
+/*   Updated: 2018/06/21 17:45:24 by zbatik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,9 @@ int				ft_indexcin(char const *s, int c);
 char			*ft_strnjoin(char const *s1, char const *s2, size_t n);
 char			*ft_strtake(char const *str, size_t n);
 char			*ft_strdrop(char const *str, size_t n);
-char			*ft_strreplace(char **replace, char with);
+char			*ft_strctake(char const *str, char c);
+char			*ft_strcdrop(char const *str, char c);
+char			*ft_strreplace(char **replace, char *with);
 
 typedef struct	s_list
 {
