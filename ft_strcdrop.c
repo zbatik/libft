@@ -6,7 +6,7 @@
 /*   By: zbatik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/21 17:46:23 by zbatik            #+#    #+#             */
-/*   Updated: 2018/06/21 18:40:27 by zbatik           ###   ########.fr       */
+/*   Updated: 2018/06/22 11:53:17 by zbatik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ char	*ft_strcdrop(char const *str, char c)
 	char	*drop;
 	int		ind;
 
-	ind = ft_min(ft_indexcin(str, c) + 1, ft_strlen(str) + 1);
-	if (ind < -1)
-		drop = ft_strdup(str);
+	ind = ft_indexcin(str, c);
+	if (ind < 0)
+		drop = ft_strnew(0);
 	else
-		drop = ft_strdrop(str, ind);
+		drop = ft_strdrop(str, ind + 1);
 	return (drop);
 }

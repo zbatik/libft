@@ -6,7 +6,7 @@
 /*   By: zbatik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/21 17:47:55 by zbatik            #+#    #+#             */
-/*   Updated: 2018/06/21 17:51:02 by zbatik           ###   ########.fr       */
+/*   Updated: 2018/06/22 11:48:28 by zbatik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ char	*ft_strctake(char const *str, char c)
 	if (ind < 0)
 		take = ft_strdup(str);
 	else
-		take = ft_strtake(str, ind);
+		take = ft_strtake(str, ind + 1);
 	return (take);
 }
