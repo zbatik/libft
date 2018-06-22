@@ -6,7 +6,7 @@
 /*   By: zbatik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 10:31:39 by zbatik            #+#    #+#             */
-/*   Updated: 2018/06/21 17:45:24 by zbatik           ###   ########.fr       */
+/*   Updated: 2018/06/22 21:32:27 by zack             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define LIBFT_H
 
 # include <stddef.h>
+
+# define MAX_INT	2147483647
+# define MIN_INT	-2147483648
 
 void			*ft_memset(void *b, int c, size_t size);
 void			ft_bzero(void *s, size_t n);
