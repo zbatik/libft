@@ -6,7 +6,7 @@
 /*   By: zbatik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 10:31:39 by zbatik            #+#    #+#             */
-/*   Updated: 2018/07/09 17:24:32 by zbatik           ###   ########.fr       */
+/*   Updated: 2018/07/09 17:49:25 by zbatik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stddef.h>
+# include "get_next_line.h"
 
 # define MAX_INT	2147483647
 # define MIN_INT	-2147483648
@@ -91,8 +92,6 @@ char			*ft_strdrop(char const *str, size_t n);
 char			*ft_strctake(char const *str, char c);
 char			*ft_strcdrop(char const *str, char c);
 char			*ft_strreplace(char **replace, char *with);
-
-int				get_next_line(const int fd, char **line);
 
 typedef struct	s_list
 {
