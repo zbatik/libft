@@ -6,7 +6,7 @@
 /*   By: zbatik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 10:31:39 by zbatik            #+#    #+#             */
-/*   Updated: 2018/06/22 21:32:27 by zack             ###   ########.fr       */
+/*   Updated: 2018/07/09 17:24:32 by zbatik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,8 @@ char			*ft_strdrop(char const *str, size_t n);
 char			*ft_strctake(char const *str, char c);
 char			*ft_strcdrop(char const *str, char c);
 char			*ft_strreplace(char **replace, char *with);
+
+int				get_next_line(const int fd, char **line);
 
 typedef struct	s_list
 {
