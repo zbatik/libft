@@ -6,7 +6,7 @@
 #    By: zbatik <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/24 11:33:49 by zbatik            #+#    #+#              #
-#    Updated: 2018/06/21 17:45:47 by zbatik           ###   ########.fr        #
+#    Updated: 2018/07/09 16:21:29 by zbatik           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,15 +85,19 @@ FILES		= 	ft_atoi \
 				ft_strdrop \
 				ft_strctake \
 				ft_strcdrop \
-				ft_strreplace 
+				ft_strreplace \
+				get_next_line 	
 
 CFILES		= $(addsuffix .c, $(FILES))
 OFILES		= $(addsuffix .o, $(FILES))
 
 all: $(NAME)
+
 $(NAME):
 	gcc $(CFLAGS) -c $(CFILES) -I ./
 	ar rcs $(NAME) $(OFILES)
+	ranlib $(NAME)
+
 clean:
 	rm -f $(OFILES)
 
@@ -103,7 +107,7 @@ fclean: clean
 re: fclean all
 
 norm:
-	norminette libft.h
+	norminette *.h
 	norminette $(wordlist 1, 20, $(CFILES))
 	norminette $(wordlist 21, 40, $(CFILES))
 	norminette $(wordlist 41, 60, $(CFILES))

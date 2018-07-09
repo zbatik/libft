@@ -6,7 +6,7 @@
 /*   By: zbatik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/28 13:54:11 by zbatik            #+#    #+#             */
-/*   Updated: 2018/06/21 17:37:46 by zbatik           ###   ########.fr       */
+/*   Updated: 2018/07/09 15:23:23 by zbatik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 int	ft_indexcin(const char *s, int c)
 {
-	size_t len;
 	size_t i;
 
 	i = 0;
-	len = ft_strlen(s) + 1;
-	while (i < len)
+	while (s[i])
 	{
-		if (*(s + i) == (char)c)
+		if (s[i] == (char)c)
 			return (i);
 		i++;
 	}
