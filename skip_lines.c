@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   skip_lines.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zbatik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/04 13:31:47 by zbatik            #+#    #+#             */
-/*   Updated: 2018/07/10 12:09:17 by zbatik           ###   ########.fr       */
+/*   Created: 2018/07/10 12:02:32 by zbatik            #+#    #+#             */
+/*   Updated: 2018/07/10 12:11:39 by zbatik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "libft.h"
 
-# define BUFF_SIZE 32
+int	skip_lines(const int fd, int skip)
+{
+	int		i;
+	char	*line;
 
-# include "libft.h"
-
-int	get_next_line(const int fd, char **line);
-int skip_lines(const int fd, int skip);
-
-#endif
+	if (skip < 1)
+		return (-1);
+	i = 0;
+	ret = 1;
+	while (i++ < skip && ret < 0)
+	{
+		ret = get_next_line(fd, &line);
+		if (line != NULL)
+			free(line);
+	}
+	return (ret);
+}

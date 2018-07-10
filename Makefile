@@ -6,7 +6,7 @@
 #    By: zbatik <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/24 11:33:49 by zbatik            #+#    #+#              #
-#    Updated: 2018/07/09 16:21:29 by zbatik           ###   ########.fr        #
+#    Updated: 2018/07/10 12:08:30 by zbatik           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -86,7 +86,8 @@ FILES		= 	ft_atoi \
 				ft_strctake \
 				ft_strcdrop \
 				ft_strreplace \
-				get_next_line 	
+				get_next_line \
+				skip_lines \	
 
 CFILES		= $(addsuffix .c, $(FILES))
 OFILES		= $(addsuffix .o, $(FILES))
