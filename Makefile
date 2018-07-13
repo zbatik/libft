@@ -6,7 +6,7 @@
 #    By: zbatik <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/24 11:33:49 by zbatik            #+#    #+#              #
-#    Updated: 2018/07/13 11:58:37 by zbatik           ###   ########.fr        #
+#    Updated: 2018/07/13 12:06:18 by zbatik           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,7 +88,7 @@ FILES		= 	ft_atoi \
 				ft_strreplace \
 				get_next_line \
 				skip_lines \
-				arrnew 	
+				ft_arrnew 	
 
 CFILES		= $(addsuffix .c, $(FILES))
 OFILES		= $(addsuffix .o, $(FILES))
