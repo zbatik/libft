@@ -6,13 +6,13 @@
 /*   By: zbatik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/04 13:28:21 by zbatik            #+#    #+#             */
-/*   Updated: 2018/07/09 17:24:41 by zbatik           ###   ########.fr       */
+/*   Updated: 2018/07/14 17:28:52 by zack             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdlib.h>
-#include "get_next_line.h"
+#include "../includes/get_next_line.h"
 
 static t_list	*get_file_info(t_list **file_list, int fd)
 {

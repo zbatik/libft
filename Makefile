@@ -6,9 +6,12 @@
 #    By: zbatik <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/24 11:33:49 by zbatik            #+#    #+#              #
-#    Updated: 2018/07/14 15:03:30 by zbatik           ###   ########.fr        #
+#    Updated: 2018/07/14 17:27:50 by zack             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+
+FT_NAME = libft.a
 SRC_DIR	= ./
 INC_DIR	= ./includes
 OBJ_DIR	= ./obj
