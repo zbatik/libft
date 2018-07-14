@@ -1,4 +1,6 @@
-a.out
 .DS_Store
-*.o
 libft.a
+a.out
+*.o
+*.a
+*.swp

@@ -6,105 +6,40 @@
 #    By: zbatik <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/24 11:33:49 by zbatik            #+#    #+#              #
-#    Updated: 2018/07/13 12:06:18 by zbatik           ###   ########.fr        #
+#    Updated: 2018/07/14 15:03:30 by zbatik           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+SRC_DIR	= ./
+INC_DIR	= ./includes
+OBJ_DIR	= ./obj
 
-NAME		= libft.a
-CFLAGS		= -Wall -Wextra -Werror
-FILES		= 	ft_atoi \
-				ft_bzero \
-				ft_countc \
-				ft_element \
-				ft_indexcin \
-				ft_isalnum \
-				ft_isalpha \
-				ft_isascii \
-				ft_isdigit \
-				ft_islower \
-				ft_isprint \
-				ft_isupper \
-				ft_isws \
-				ft_itoa \
-				ft_lstadd \
-				ft_lstdel \
-				ft_lstdelone \
-				ft_lstiter \
-				ft_lstmap \
-				ft_lstnew \
-				ft_max \
-				ft_memalloc \
-				ft_memccpy \
-				ft_memchr \
-				ft_memcmp \
-				ft_memcpy \
-				ft_memdel \
-				ft_memmove \
-				ft_memset \
-				ft_min \
-				ft_putchar \
-				ft_putchar_fd \
-				ft_putendl \
-				ft_putendl_fd \
-				ft_putnbr \
-				ft_putnbr_fd \
-				ft_putstr \
-				ft_putstr_fd \
-				ft_putstrarr \
-				ft_sign \
-				ft_strcat \
-				ft_strchr \
-				ft_strclr \
-				ft_strcmp \
-				ft_strcpy \
-				ft_strdel \
-				ft_strdup \
-				ft_strequ \
-				ft_striter \
-				ft_striteri \
-				ft_strjoin \
-				ft_strlcat \
-				ft_strlen \
-				ft_strmap \
-				ft_strmapi \
-				ft_strncat \
-				ft_strncmp \
-				ft_strncpy \
-				ft_strnequ \
-				ft_strnew \
-				ft_strnstr \
-				ft_strrchr \
-				ft_strsplit \
-				ft_strstr \
-				ft_strsub \
-				ft_strtrim \
-				ft_tolower \
-				ft_toupper \
-				ft_strnjoin \
-				ft_strtake \
-				ft_strdrop \
-				ft_strctake \
-				ft_strcdrop \
-				ft_strreplace \
-				get_next_line \
-				skip_lines \
-				ft_arrnew 	
+RAW_SRC	:= $(shell find $(SRC_DIR) -type f | grep -E "\.c$$")
+RAW_DIRS:= $(shell find $(SRC_DIR) -type d -mindepth 1)
+SRCDIRS = $(RAW_DIRS:./src/%=%)
+SRC		= $(RAW_SRC:./src/%=%)
+OBJ		= $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 
-CFILES		= $(addsuffix .c, $(FILES))
-OFILES		= $(addsuffix .o, $(FILES))
+CC		= gcc
+CFLAGS	= -Wall -Wextra -Werror
 
-all: $(NAME)
+all: $(OBJ_DIR) $(FT_NAME)
 
-$(NAME):
-	gcc $(CFLAGS) -c $(CFILES) -I ./
-	ar rcs $(NAME) $(OFILES)
-	ranlib $(NAME)
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
+	mkdir -p $(addprefix $(OBJ_DIR)/,$(SRCDIRS))
+
+$(OBJ_DIR)/%.o:$(SRC_DIR)/%.c
+	$(CC) $(CFLAGS) $(FT_INC) -o $@ -c $<
+
+$(FT_NAME): $(OBJ)
+	ar rc $(FT_NAME) $(OBJ)
+	ranlib $(FT_NAME)
 
 clean:
-	rm -f $(OFILES)
+	rm -rf $(OBJ_DIR)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(FT_NAME)
 
 re: fclean all
 
