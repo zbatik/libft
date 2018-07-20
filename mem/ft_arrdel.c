@@ -6,7 +6,7 @@
 /*   By: zack <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 17:31:13 by zack              #+#    #+#             */
-/*   Updated: 2018/07/14 17:39:30 by zack             ###   ########.fr       */
+/*   Updated: 2018/07/20 15:23:29 by zbatik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,12 @@
 
 void	ft_arrdel(char ***arr)
 {
-	char *next;
-	while (**arr)
+	int i;
+
+	i = -1;
+	while (arr[++i] != NULL)
 	{
-		next = **arr + 1;
-		free(**arr);
-		**arr = NULL;
-		**arr = next;
+		ft_strdel(&(*arr)[i]);
 	}
 	*arr = NULL;
 }
