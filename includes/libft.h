@@ -6,7 +6,7 @@
 /*   By: zbatik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 10:31:39 by zbatik            #+#    #+#             */
-/*   Updated: 2018/07/20 15:32:05 by zbatik           ###   ########.fr       */
+/*   Updated: 2018/07/23 15:23:56 by zbatik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ int				ft_isupper(int c);
 int				ft_islower(int c);
 int				ft_max(int n, int m);
 int				ft_min(int n, int m);
+int				ft_abs(int n);
 int				ft_element(char c, char const *str);
 int				ft_isws(int c);
 int				ft_countc(const char *s, char c);
