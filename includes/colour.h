@@ -6,7 +6,7 @@
 /*   By: zbatik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/27 12:08:30 by zbatik            #+#    #+#             */
-/*   Updated: 2018/07/27 12:59:53 by zbatik           ###   ########.fr       */
+/*   Updated: 2018/07/27 16:30:36 by zbatik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,20 @@
 # define ANSI_COLOUR_CYAN    "\x1b[36m"
 # define ANSI_COLOUR_RESET   "\x1b[0m"
 
-char	*select_colour(char colour);
+typedef enum
+{
+	r,
+	g,
+	y,
+	b,
+	m,
+	c,
+}		t_colour;
 
-void	ft_putchar_cl(char c, char colour);
-void	ft_putstr_cl(char *s, char colour);
-void	ft_putendl_cl(char *s, char colour);
-void	ft_putnbr_cl(int n, char colour);
+char	*select_colour(t_colour colour);
+void	ft_putchar_cl(char c, t_colour colour);
+void	ft_putstr_cl(char *s, t_colour colour);
+void	ft_putendl_cl(char *s, t_colour colour);
+void	ft_putnbr_cl(int n, t_colour colour);
 
 #endif
