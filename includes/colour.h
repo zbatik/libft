@@ -1,0 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   colour.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zbatik <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/07/27 12:08:30 by zbatik            #+#    #+#             */
+/*   Updated: 2018/07/27 12:59:53 by zbatik           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef COLOUR_H
+# define COLOUR_H
+
+# define ANSI_COLOUR_RED     "\x1b[31m"
+# define ANSI_COLOUR_GREEN   "\x1b[32m"
+# define ANSI_COLOUR_YELLOW  "\x1b[33m"
+# define ANSI_COLOUR_BLUE    "\x1b[34m"
+# define ANSI_COLOUR_MAGENTA "\x1b[35m"
+# define ANSI_COLOUR_CYAN    "\x1b[36m"
+# define ANSI_COLOUR_RESET   "\x1b[0m"
+
+char	*select_colour(char colour);
+
+void	ft_putchar_cl(char c, char colour);
+void	ft_putstr_cl(char *s, char colour);
+void	ft_putendl_cl(char *s, char colour);
+void	ft_putnbr_cl(int n, char colour);
+
+#endif

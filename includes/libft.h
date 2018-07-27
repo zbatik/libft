@@ -6,7 +6,7 @@
 /*   By: zbatik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 10:31:39 by zbatik            #+#    #+#             */
-/*   Updated: 2018/07/14 17:45:05 by zack             ###   ########.fr       */
+/*   Updated: 2018/07/27 12:32:04 by zbatik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stddef.h>
 # include "get_next_line.h"
+# include "colour.h"
 
 # define MAX_INT	2147483647
 # define MIN_INT	-2147483648
