@@ -6,22 +6,21 @@
 /*   By: zack <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 17:31:13 by zack              #+#    #+#             */
-/*   Updated: 2018/07/14 17:39:30 by zack             ###   ########.fr       */
+/*   Updated: 2018/07/20 15:31:28 by zbatik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 #include "stdlib.h"
 
-void	ft_arrdel(char ***arr)
+void	ft_arrdel(char ***arr, int x)
 {
-	char *next;
-	while (**arr)
+	int i;
+
+	i = -1;
+	while (++i < x)
 	{
-		next = **arr + 1;
-		free(**arr);
-		**arr = NULL;
-		**arr = next;
+		ft_strdel(&(*arr)[i]);
 	}
 	*arr = NULL;
 }

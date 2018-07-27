@@ -6,7 +6,7 @@
 /*   By: zbatik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 10:31:39 by zbatik            #+#    #+#             */
-/*   Updated: 2018/07/27 12:32:04 by zbatik           ###   ########.fr       */
+/*   Updated: 2018/07/27 13:08:14 by zbatik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ int				ft_isupper(int c);
 int				ft_islower(int c);
 int				ft_max(int n, int m);
 int				ft_min(int n, int m);
+int				ft_abs(int n);
 int				ft_element(char c, char const *str);
 int				ft_isws(int c);
 int				ft_countc(const char *s, char c);
@@ -94,7 +95,7 @@ char			*ft_strctake(char const *str, char c);
 char			*ft_strcdrop(char const *str, char c);
 char			*ft_strreplace(char **replace, char *with);
 char			**ft_arrnew(size_t x, size_t y);
-void			ft_arrdel(char ***arr);
+void			ft_arrdel(char ***arr, int x);
 
 typedef struct	s_list
 {
