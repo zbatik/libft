@@ -6,7 +6,7 @@
 /*   By: zbatik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 10:31:39 by zbatik            #+#    #+#             */
-/*   Updated: 2018/07/29 15:20:52 by zbatik           ###   ########.fr       */
+/*   Updated: 2018/08/04 14:01:05 by zbatik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include "get_next_line.h"
 # include "colour.h"
 # include "ft_lists.h"
+
+typedef char	t_bool;
 
 void	*ft_memset(void *b, int c, size_t size);
 void	ft_bzero(void *s, size_t n);
