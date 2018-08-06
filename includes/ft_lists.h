@@ -6,7 +6,7 @@
 /*   By: zbatik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/29 14:16:11 by zbatik            #+#    #+#             */
-/*   Updated: 2018/07/30 11:26:23 by zbatik           ###   ########.fr       */
+/*   Updated: 2018/08/06 12:51:30 by zbatik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,7 @@ typedef struct	s_dblist
 
 t_dblist		*ft_lstdbnew(char *str, int n);
 void			ft_lstdbadd(t_dblist **dblst, t_dblist *new_node);
+void			ft_lstdbdel(t_dblist **list);
+void			ft_lstdbdelone(t_dblist **list);
 
 #endif
