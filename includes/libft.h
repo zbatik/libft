@@ -6,7 +6,7 @@
 /*   By: zbatik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 10:31:39 by zbatik            #+#    #+#             */
-/*   Updated: 2018/08/06 10:56:26 by zbatik           ###   ########.fr       */
+/*   Updated: 2018/08/20 16:54:08 by event            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ char	*ft_strnstr(const char *hay, const char *need, size_t len);
 int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnew(size_t size);
+int		ft_strarrlen(char **arr);
 void	ft_strdel(char **as);
 void	ft_strclr(char *s);
 void	ft_striter(char *s, void (*f)(char *));
