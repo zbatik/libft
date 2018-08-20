@@ -6,7 +6,7 @@
 /*   By: zbatik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/27 12:08:30 by zbatik            #+#    #+#             */
-/*   Updated: 2018/08/04 15:14:39 by zbatik           ###   ########.fr       */
+/*   Updated: 2018/08/17 16:58:13 by event            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # define ANSI_COLOUR_MAGENTA "\x1b[35m"
 # define ANSI_COLOUR_CYAN    "\x1b[36m"
 # define ANSI_COLOUR_RESET   "\x1b[0m"
+
+# define SWTCH(x) (x == na ? "" : ANSI_COLOUR_RESET)
 
 typedef enum
 {

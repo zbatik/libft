@@ -6,7 +6,7 @@
 /*   By: zbatik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/27 12:11:05 by zbatik            #+#    #+#             */
-/*   Updated: 2018/07/30 11:24:15 by zbatik           ###   ########.fr       */
+/*   Updated: 2018/08/17 17:01:21 by event            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@ void	ft_putstr_cl(char *s, t_colour colour)
 {
 	ft_putstr(select_colour(colour));
 	ft_putstr(s);
-	ft_putstr(ANSI_COLOUR_RESET);
+	ft_putstr(SWTCH(colour));
 }
