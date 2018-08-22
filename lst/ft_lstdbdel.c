@@ -6,7 +6,7 @@
 /*   By: zbatik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/06 12:27:17 by zbatik            #+#    #+#             */
-/*   Updated: 2018/08/06 12:55:17 by zbatik           ###   ########.fr       */
+/*   Updated: 2018/08/22 15:33:59 by zbatik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,5 @@ void	ft_lstdbdel(t_dblist **list)
 		ft_lstdbdelone(list);
 		*list = next;
 	}
+	*list = NULL;
 }
