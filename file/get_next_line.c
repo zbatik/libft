@@ -3,79 +3,110 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zbatik <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mdilapi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/04 13:28:21 by zbatik            #+#    #+#             */
-/*   Updated: 2018/07/14 17:28:52 by zack             ###   ########.fr       */
+/*   Created: 2018/05/23 11:40:05 by mdilapi           #+#    #+#             */
+/*   Updated: 2018/08/22 14:40:49 by zbatik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
 #include "../includes/get_next_line.h"
+#include <stdlib.h>
+#include <unistd.h>
 
-static t_list	*get_file_info(t_list **file_list, int fd)
+static void	swapnfree(char **var, char *new_val)
 {
-	t_list	*tmp;
-	t_list	*new_node;
+	char	*tmp;
 
-	tmp = *file_list;
-	while (tmp)
+	free(*var);
+	tmp = new_val;
+	*var = tmp;
+}
+
+static int	index_of(const char *s, const char c)
+{
+	int i;
+
+	i = 0;
+	if (s != NULL)
 	{
-		if ((size_t)fd == tmp->content_size)
-			return (tmp);
-		tmp = tmp->next;
+		while (s[i] != '\0')
+		{
+			if (s[i] == c)
+				return (i);
+			i++;
+		}
+		if (s[i] == c)
+			return (i);
 	}
-	new_node = ft_lstnew("\0", (size_t)fd);
-	ft_lstadd(file_list, new_node);
-	return (*file_list);
+	return (-1);
 }
 
-static int		ft_read(const int fd, char *buf, char **content)
+static void	work(char **ret_line, char **buffer, int nl)
 {
-	int		ret;
+	char	*tmp;
 
-	ret = read(fd, buf, BUFF_SIZE);
-	if (ret < 0)
-		return (-1);
-	buf[ret] = 0;
-	*content = ft_strreplace(content, ft_strjoin(*content, buf));
-	if (*content == NULL)
-		return (-1);
-	return (ret);
+	tmp = ft_strsub(*buffer, 0, nl + 1);
+	tmp[nl] = '\0';
+	swapnfree(ret_line, ft_strjoin(*ret_line, tmp));
+	free(tmp);
+	tmp = ft_strsub(*buffer, nl + 1, BUFF_SIZE);
+	tmp[BUFF_SIZE - nl] = '\0';
+	ft_memmove(*buffer, tmp, ft_strlen(tmp) + 1);
+	if (buffer[0][0] == '\0')
+		ft_bzero(*buffer, (size_t)(BUFF_SIZE + 1));
+	free(tmp);
 }
 
-static int		ft_add(int fd, t_list *file)
+static int	gnl(const int fd, char **ret_line, char **buffer)
 {
-	char	buf[BUFF_SIZE + 1];
-	int		move;
-	int		ret;
+	int		read_ret;
+	int		nl;
 
-	move = 0;
-	while ((ret = ft_read(fd, buf, (char **)&(file->content))) > 0)
+	nl = -1;
+	read_ret = 3;
+	while (nl == -1 && read_ret > 0)
 	{
-		if (ret < 0)
-			return (-1);
-		if (ft_element('\n', move + (file->content)))
-			break ;
-		move += ret;
+		nl = index_of(*buffer, '\n');
+		if (nl != -1)
+			work(ret_line, buffer, nl);
+		else
+		{
+			swapnfree(ret_line, ft_strjoin(*ret_line, *buffer));
+			ft_bzero(*buffer, (size_t)(BUFF_SIZE + 1));
+			if ((read_ret = read(fd, *buffer, BUFF_SIZE)) < 0)
+				return (-1);
+			buffer[0][read_ret] = '\0';
+		}
 	}
-	return (ret);
+	return (read_ret);
 }
 
-int				get_next_line(const int fd, char **line)
+int			get_next_line(const int fd, char **line)
 {
-	static t_list	*file_list;
-	t_list			*file;
-	int				ret;
+	static char	*buffer[MI];
+	int			read_ret;
 
-	if (fd < 0 || BUFF_SIZE < 1 || line == NULL || 0 > read(fd, "", 0))
+	if (fd < 0 || !line || BUFF_SIZE < 0 || read(fd, buffer[fd], 0) < 0)
 		return (-1);
-	file = get_file_info(&file_list, fd);
-	ret = ft_add(fd, file);
-	if (ret == 0 && 0 == *(char *)(file->content))
+	if (buffer[fd] == NULL)
+		buffer[fd] = ft_strnew(BUFF_SIZE + 1);
+	if ((*line = ft_strnew(BUFF_SIZE + 1)) == NULL)
+		return (-1);
+	if (0 == *buffer[fd])
+	{
+		if ((read_ret = read(fd, buffer[fd], BUFF_SIZE)) <= 0)
+			return (read_ret);
+		buffer[fd][read_ret] = '\0';
+	}
+	read_ret = gnl(fd, line, &buffer[fd]);
+	if (read_ret < 0)
+		return (-1);
+	if (0 == **line && read_ret == 0)
+	{
+		free(buffer[fd]);
+		buffer[fd] = NULL;
 		return (0);
-	*line = ft_strctake(file->content, '\n');
-	file->content = ft_strcdrop(file->content, '\n');
+	}
 	return (1);
 }
