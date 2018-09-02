@@ -6,7 +6,7 @@
 /*   By: zbatik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/27 12:08:30 by zbatik            #+#    #+#             */
-/*   Updated: 2018/08/17 16:58:13 by event            ###   ########.fr       */
+/*   Updated: 2018/09/02 13:54:10 by zbatik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@
 
 typedef enum
 {
+	na,
 	r,
 	g,
 	y,
 	b,
 	m,
 	c,
-	na,
 }	t_colour;
 
 char	*select_colour(t_colour colour);
